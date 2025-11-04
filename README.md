@@ -1,5 +1,5 @@
-# 🚀 **Hybrid Gas Leak Detection**  
-### 🔥 **Real-time AI Guardian for Industrial Safety**  
+# 🚀 Hybrid Gas Leak Detection  
+### 🔥 Real-time AI Guardian for Industrial Safety  
 #### *Powered by DIP + YOLOv8*  
 
 <p align="center">
@@ -14,26 +14,26 @@
 
 ---
 
-## 🌪️ **The Mission: Stop Invisible Threats**
+## 🌪️ The Mission: Stop Invisible Threats
 
-Gas leaks are **silent killers** — odorless, colorless, and deadly.  
+Gas leaks are **silent killers** — odorless, colorless, and dangerous.  
 This project fuses **Digital Image Processing (DIP)** with **YOLOv8 Deep Learning** to **detect, localize, and alert** gas leaks in **real time** using visual data.
 
 ---
 
-## 🧬 **How It Works — The AI Pipeline**
+## 🧬 How It Works — The AI Pipeline
 
 ```mermaid
 flowchart TD
-    A[📸 Input Image or Video Frame]
-    --> B{🔍 Preprocess using DIP}
-    B --> C[✨ Gaussian Blur]
-    B --> D[🖼️ Bilateral Filter]
-    B --> E[🌈 Adaptive Histogram Equalization]
-    B --> F[✂️ Edge & Contour Detection]
-    F --> G[🤖 YOLOv8 Model Inference]
-    G --> H[🚨 Bounding Box + Confidence Score]
-    H --> I[📊 Output Visualization & Alerts]
+    A[Input Image or Video Frame]
+    --> B{Preprocess using DIP}
+    B --> C[Gaussian Blur]
+    B --> D[Bilateral Filter]
+    B --> E[Adaptive Histogram Equalization]
+    B --> F[Edge & Contour Detection]
+    F --> G[YOLOv8 Model Inference]
+    G --> H[Bounding Box + Confidence Score]
+    H --> I[Output Visualization & Alerts]
 
     style A fill:#FF6B6B,stroke:#333
     style B fill:#FFD93D,stroke:#333
@@ -42,70 +42,92 @@ flowchart TD
     style H fill:#9D4EDD,stroke:#333
     style I fill:#00BFA6,stroke:#333
 
+## 🧩 Methodology: How the AI Sees the Invisible
 
-🧩 Methodology
-1️⃣ Data Acquisition
-Images of gas leaks (IR and RGB) were collected and annotated using Roboflow.
+This hybrid system combines **classic Digital Image Processing (DIP)** with **YOLOv8 deep learning** to detect and localize gas leaks in real time.
 
-2️⃣ Preprocessing (DIP Techniques)
-Enhances image quality for model training and inference:
+### 1️⃣ Data Acquisition
 
-Gaussian Filter – Removes random noise
+Gas leak images (IR and RGB) were collected and annotated using **Roboflow**.
 
-Bilateral Filter – Preserves edges during smoothing
+- **Sources:** RGB and IR cameras  
+- **Purpose:** Provide high-quality, labeled datasets for training  
 
-Adaptive Histogram Equalization (CLAHE) – Boosts contrast
+### 2️⃣ Image Preprocessing (DIP Magic)
 
-Edge & Contour Detection – Highlights plume boundaries
+Enhances the visual information before feeding into the model:
 
-3️⃣ Model Training
-YOLOv8 is trained for robust gas leak detection:
+- **Gaussian Blur** – Smooths noise while preserving structure  
+- **Bilateral Filter** – Keeps edges sharp while reducing noise  
+- **Adaptive Histogram Equalization (CLAHE)** – Boosts contrast for better visibility  
+- **Edge & Contour Detection** – Highlights the gas plume for accurate recognition  
 
+### 3️⃣ Model Training (YOLOv8 Deep Learning)
 
+- Uses **YOLOv8 pretrained weights**  
+- Fine-tunes on the processed dataset  
+- Learns to detect and localize gas plumes accurately  
+
+```python
 from ultralytics import YOLO
+
 model = YOLO("yolov8n.pt")
 model.train(data="/content/Gas-Leak-1/data.yaml", epochs=30, imgsz=640)
-4️⃣ Detection & Prediction
-Run inference on test images or videos:
 
+### 4️⃣ Detection & Prediction
 
+Once trained, the model predicts gas leak regions in new images or video frames:
+
+```python
 results = model.predict("/content/Gas-Leak-1/test/images/sample.jpg", conf=0.4)
 results.show()
-⚙️ Key Features
-✅ Hybrid DIP + Deep Learning pipeline
-✅ Real-time detection using YOLOv8
-✅ GPU acceleration (Google Colab compatible)
-✅ Edge-preserving noise reduction
-✅ Accurate localization of gas plumes
-✅ Seamless Roboflow dataset integration
 
-📊 Model Evaluation
-Confidence Score (e.g., Gas: 0.52) → Probability of a detected object being a gas leak
+### ✅ Key Highlights
 
-mAP (Mean Average Precision) → Measures detection accuracy across test samples
+- Hybrid pipeline: DIP filters enhance input, YOLOv8 detects gas  
+- Real-time performance with GPU support  
+- Accurate plume localization with confidence scores
 
-🚀 Tech Stack
-Python 3.12.11
+### ⚙️ Key Features
 
-OpenCV (DIP)
+- ✅ Hybrid DIP + Deep Learning pipeline  
+- ✅ Real-time detection using YOLOv8  
+- ✅ GPU acceleration (Google Colab compatible)  
+- ✅ Edge-preserving noise reduction  
+- ✅ Accurate localization of gas plumes  
+- ✅ Roboflow dataset integration  
 
-Ultralytics YOLOv8
+---
 
-NumPy, Matplotlib
+### 📊 Model Evaluation
 
-Roboflow API
+- **Confidence Score (e.g., Gas: 0.52)** → Probability of detected object being a gas leak  
+- **mAP (Mean Average Precision)** → Measures detection accuracy across test samples
 
-Google Colab (GPU Runtime)
+### 🚀 Tech Stack
 
-🧠 Future Scope
-Integrate Thermal IR cameras for enhanced plume detection
+- **Python 3.12.11**  
+- **OpenCV (DIP)**  
+- **Ultralytics YOLOv8**  
+- **NumPy, Matplotlib**  
+- **Roboflow API**  
+- **Google Colab (GPU Runtime)**  
 
-Add IoT sensor alerts for industrial deployment
+---
 
-Develop a web or mobile interface for live monitoring
+### 🧠 Future Scope
 
-Enable real-time video stream inference
+- Integrate **Thermal IR cameras** for enhanced plume detection  
+- Add **IoT alert system** for industrial safety  
+- Develop **web or mobile interface** for live monitoring  
+- Enable **real-time video stream inference**  
 
-🤝 Contributor
-👨‍💻 Pranav Harad
-Developer 
+---
+
+### 🤝 Contributor
+
+**👨‍💻 Pranav Harad**  
+*Developer | Researcher | AI & Vision Enthusiast*  
+
+📧 Email: [pranavharad64@gmail.com](mailto:pranavharad64@gmail.com)  
+🔗 LinkedIn: [www.linkedin.com/in/pranav-harad-667070268](https://www.linkedin.com/in/pranav-harad-667070268)
