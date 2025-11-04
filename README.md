@@ -52,7 +52,7 @@ from ultralytics import YOLO
 
 model = YOLO("yolov8n.pt")
 model.train(data="/content/Gas-Leak-1/data.yaml", epochs=30, imgsz=640)
-**closing \`\`\`**
+``` 
 
 ### 4️⃣ Detection & Prediction
 
@@ -61,6 +61,7 @@ Once trained, the model predicts gas leak regions in new images or video frames:
 ```python
 results = model.predict("/content/Gas-Leak-1/test/images/sample.jpg", conf=0.4)
 results.show()
+``` 
 
 ### ✅ Key Highlights
 
