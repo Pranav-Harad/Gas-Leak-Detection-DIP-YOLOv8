@@ -21,27 +21,6 @@ This project fuses **Digital Image Processing (DIP)** with **YOLOv8 Deep Learnin
 
 ---
 
-## 🧬 How It Works — The AI Pipeline
-
-```mermaid
-flowchart TD
-    A[Input Image or Video Frame]
-    --> B{Preprocess using DIP}
-    B --> C[Gaussian Blur]
-    B --> D[Bilateral Filter]
-    B --> E[Adaptive Histogram Equalization]
-    B --> F[Edge & Contour Detection]
-    F --> G[YOLOv8 Model Inference]
-    G --> H[Bounding Box + Confidence Score]
-    H --> I[Output Visualization & Alerts]
-
-    style A fill:#FF6B6B,stroke:#333
-    style B fill:#FFD93D,stroke:#333
-    style F fill:#6BCB77,stroke:#333
-    style G fill:#4D96FF,stroke:#333
-    style H fill:#9D4EDD,stroke:#333
-    style I fill:#00BFA6,stroke:#333
-
 ## 🧩 Methodology: How the AI Sees the Invisible
 
 This hybrid system combines **classic Digital Image Processing (DIP)** with **YOLOv8 deep learning** to detect and localize gas leaks in real time.
@@ -73,6 +52,7 @@ from ultralytics import YOLO
 
 model = YOLO("yolov8n.pt")
 model.train(data="/content/Gas-Leak-1/data.yaml", epochs=30, imgsz=640)
+
 
 ### 4️⃣ Detection & Prediction
 
