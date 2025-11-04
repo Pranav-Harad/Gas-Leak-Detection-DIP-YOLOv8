@@ -1,4 +1,5 @@
 Hybrid Gas Leak Detection using DIP + YOLOv8
+
 🚨 Real-time AI system for industrial gas leak monitoring and detection
 🌍 Overview
 
@@ -8,6 +9,7 @@ This project presents a hybrid detection framework combining Digital Image Proce
 Leveraging Roboflow datasets, filter-based preprocessing, and real-time inference, the system enhances image quality, extracts features, and classifies potential leaks with improved accuracy and localization.
 
 🧩 Methodology
+
 1️⃣ Data Acquisition
 
 Infrared (IR) and RGB images of gas leaks were sourced and annotated using Roboflow.
