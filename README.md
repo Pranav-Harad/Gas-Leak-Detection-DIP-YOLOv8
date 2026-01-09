@@ -105,10 +105,7 @@ results.show()
 
 ---
 
-### 🤝 Contributor
-
-**👨‍💻 Pranav Harad**  
-*Developer | Researcher | AI & Vision Enthusiast*  
-
+## Author 👨‍💻
+Made with ❤️ by **Pranav**  
 📧 Email: [pranavharad64@gmail.com](mailto:pranavharad64@gmail.com)  
 🔗 LinkedIn: [www.linkedin.com/in/pranav-harad-667070268](https://www.linkedin.com/in/pranav-harad-667070268)
